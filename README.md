@@ -1,19 +1,7 @@
-# PlantUML-Demo
-PlantUML 参考示例
+# UML 小解
 
+## UML 
 
-@startuml 时序图
-actor 参与者
-boundary 限制
-control 控制
-entity 实体
-database 数据库
-collections 收集
+统一建模语言（英语：Unified Modeling Language，缩写 UML）
 
-参与者 -> 限制 : 满足边界条件
-参与者 -> 控制 : 控制系统
-参与者 -> 实体 : 操作实体
-参与者 -> 数据库 : 同步数据库
-参与者 -> 收集 : 完成数据采集
-
-@enduml
+UML是一种开放的方法，用于说明、可视化、构建和编写一个正在开发的、面向对象的、软件密集系统的制品的开放方法。

@@ -1,0 +1,152 @@
+
+#部署图用于对系统的物理结构建模
+
+@startuml 部署图
+actor 活动人员
+agent 代理
+artifact artifact
+boundary 限制分界
+card 卡片
+cloud 云
+component 组件
+control 控制器
+database 数据库
+entity 实体
+file 文件
+folder 文件价
+frame 框架
+interface 接口
+node 节点
+package 包
+queue 队列
+stack 堆
+rectangle 矩形啦
+storage 存储
+usecase 用例
+@enduml
+
+
+@startuml 组合
+folder folder [
+这是一个 <b>文件夹
+----
+您可以使用
+====
+不同类型
+....
+的分隔符
+]
+
+node node [
+这是一个 <b>结点
+----
+您可以使用
+====
+不同类型
+....
+的分隔符
+]
+
+database database [
+这是个数据库 <b>数据库
+----
+您可以使用
+====
+不同类型
+....
+的分隔符
+]
+usecase usecase [
+这是个 <b>用例
+----
+您可以使用
+====
+不同类型
+....
+的分隔符
+]
+@enduml
+
+
+#您可以在元素之间创建简单链接
+@startuml 简单链接
+
+node node1
+node node2
+node node3
+node node4
+node node5
+node1 -- node2
+node1 .. node3
+node1 ~~ node4
+node1 == node5
+
+@enduml
+
+
+@startuml 横向的链接
+left to right direction
+frame user1 {
+card root
+card sub1
+card sub2
+}
+
+card leaf1
+card leaf2
+
+root --> sub1
+root --> sub2
+sub1 --> leaf1
+sub1 --> leaf2
+@enduml
+
+
+@startuml 链接样式
+
+cloud cloud1
+cloud cloud2
+cloud cloud3
+cloud cloud4
+cloud cloud5
+cloud1 -0- cloud2
+cloud1 -0)- cloud3
+cloud1 -(0- cloud4
+cloud1 -(0)- cloud5
+
+@enduml
+
+
+@startuml 包装组合 1
+artifact Foo1 {
+  folder Foo2
+}
+
+folder Foo3 {
+  artifact Foo4
+}
+
+frame Foo5 {
+  database Foo6
+}
+
+@enduml
+
+
+@startuml 包装组合 2
+node Foo1 {
+ cloud Foo2 
+}
+
+cloud Foo3 {
+  frame Foo4
+}
+
+database Foo5  {
+  storage Foo6
+}
+
+storage Foo7 {
+  storage Foo8
+}
+@enduml

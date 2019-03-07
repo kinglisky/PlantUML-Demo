@@ -1,0 +1,109 @@
+@startuml 基础类图
+class Foo {
+  String data
+  void methods()
+}
+@enduml
+
+
+@startuml 属性
+class Dummy {
+ -field1
+ #field2
+ ~method1()
+ +method2()
+}
+@enduml
+
+
+
+@startuml 抽象与静态
+class Dummy {
+  {static} String id
+  {abstract} void methods()
+}
+@enduml
+
+
+@startuml 高级类图
+class Foo1 {
+  You can use
+  several lines
+  ..
+  as you want
+  and group
+  ==
+  things together.
+  __
+  You can have as many groups
+  as you want
+  --
+  End of class
+}
+
+class User {
+  .. Simple Getter ..
+  + getName()
+  + getAddress()
+  .. Some setter ..
+  + setName()
+  __ private data __
+  int age
+  -- encrypted --
+  String password
+}
+@enduml
+
+
+
+@startuml 类联系
+Class01 <|-- Class02
+Class03 *-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 -- Class10
+@enduml
+
+
+@startuml 抽象类和接口
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+  Object[] elementData
+  size()
+}
+
+enum TimeUnit {
+  DAYS
+  HOURS
+  MINUTES
+}
+
+annotation SuppressWarnings
+@enduml
+
+
+@startuml 隐藏类
+class Foo1
+class Foo2
+Foo2 *-- Foo1
+hide Foo2
+@enduml
+
+
+@startuml 泛型（generics）
+class Foo<? extends Element> {
+  int size()
+}
+Foo *- Element
+@enduml

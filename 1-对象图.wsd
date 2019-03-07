@@ -1,0 +1,23 @@
+@startuml Object
+object 大佬 {
+    衣着: 女装格子
+    头发: 不用电风吹
+}
+@enduml
+
+
+@startuml 关系
+object Obj1
+object Obj2
+object Obj3
+object Obj4
+object Obj5
+object Obj6
+object Obj7
+object Obj8
+
+Obj1 <|-- Obj2 : 2 继承 1
+Obj3 *-- Obj4 : 3 由 4 组成 (强依赖)
+Obj5 o-- "6" Obj6 : 5 由 6 组成 (弱依赖)
+Obj7 .. Obj8 : 相互关联
+@enduml

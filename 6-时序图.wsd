@@ -1,0 +1,89 @@
+@startuml 时序图
+actor 参与者
+boundary 限制
+control 控制
+entity 实体
+database 数据库
+collections 收集
+
+参与者 -> 限制 : 满足边界条件
+参与者 -> 控制 : 控制系统
+参与者 -> 实体 : 操作实体
+参与者 -> 数据库 : 同步数据库
+参与者 -> 收集 : 完成数据采集
+@enduml
+
+@startuml 修改箭头样式
+Bob ->x Alice
+Bob -> Alice
+Bob ->> Alice
+Bob -\ Alice
+Bob \\- Alice
+Bob //-- Alice
+
+Bob ->o Alice
+Bob o\\-- Alice
+
+Bob <-> Alice
+Bob <->o Alice
+@enduml
+
+@startuml 修改箭头的颜色
+Bob -[#red]> Alice : hello
+Alice -[#0000FF]->Bob : ok
+@enduml
+
+@startuml 序号标签
+autonumber "<b>[000]"
+Bob -> Alice : Authentication Request
+Bob <- Alice : Authentication Response
+
+autonumber 15 "<b>(<u>##</u>)"
+Bob -> Alice : Another authentication Request
+Bob <- Alice : Another authentication Response
+
+autonumber 40 10 "<font color=red><b>Message 0  "
+Bob -> Alice : Yet another authentication Request
+Bob <- Alice : Yet another authentication Response
+
+@enduml
+
+
+
+@startuml 注释
+Alice->Bob : hello
+note left: this is a first note
+
+Bob->Alice : ok
+note right: this is another note
+
+Bob->Bob : I am thinking
+note left
+	a note
+	can also be defined
+	on several lines
+end note
+@enduml
+
+
+@startuml 生命线的激活与撤销
+participant User
+
+User -> A: DoWork
+activate A
+
+A -> B: << createRequest >>
+activate B
+
+B -> C: DoWork
+activate C
+C --> B: WorkDone
+destroy C
+
+B --> A: RequestCreated
+deactivate B
+
+A -> User: Done
+deactivate A
+
+@enduml

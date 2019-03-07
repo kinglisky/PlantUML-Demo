@@ -1,0 +1,5 @@
+@startuml TCP 三次握手
+client -> server: SYN(J)
+server --> client: SYN(seq=J) ACK(J+1)
+client -> server: ACK(K+1)
+@enduml
